@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user2 = User.create({:email => "user1@example.com", :password => "user1234"})
+
+
+def create_50
+  Fabricate.times(1, :user, email: FFaker::Internet.email, password: "password", password_confirmation: "password" )
+end
+
+create_50
+# 50.times do |d|
+#   (create_50)
+# end

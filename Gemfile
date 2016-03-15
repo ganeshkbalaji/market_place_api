@@ -30,10 +30,13 @@ gem 'furatto', github: "IcaliaLabs/furatto-rails"
 gem 'font-awesome-rails'
 gem 'simple_form'
 
+gem 'fabrication', '~> 2.15'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'sqlite3'
+  gem "ffaker"
 end
 
 group :development do

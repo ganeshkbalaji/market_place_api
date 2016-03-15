@@ -95,6 +95,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
+    fabrication (2.15.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.6.0)
@@ -230,6 +231,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  fabrication (~> 2.15)
   factory_girl_rails
   ffaker
   font-awesome-rails
