@@ -14,7 +14,9 @@ describe Api::V1::UsersController do
       expect(user_response[:email]).to eql @user.email
     end
 
-    it { should respond_with 200 }
+    it "should respond with a 200" do
+      expect(response.status).to be(200)
+    end
   end
 
   describe "POST #create" do
@@ -30,7 +32,9 @@ describe Api::V1::UsersController do
         expect(user_response[:email]).to eql @user_attributes[:email]
       end
 
-      it { should respond_with 201 }
+      it "should respond with a 201" do
+       expect(response.status).to be(201)
+      end
     end
 
     context "when is not created" do
@@ -51,7 +55,9 @@ describe Api::V1::UsersController do
         expect(user_response[:errors][:email]).to include "can't be blank"
       end
 
-      it { should respond_with 422 }
+      it "should respond with 422" do
+        expect(response.status).to be(422)
+      end
     end
   end
 
@@ -69,7 +75,9 @@ describe Api::V1::UsersController do
         expect(user_response[:email]).to eql "newmail@example.com"
       end
 
-      it { should respond_with 200 }
+      it "should respond with 200" do
+        expect(response.status).to be(200)
+      end
     end
 
     context "when is not created" do
@@ -89,7 +97,9 @@ describe Api::V1::UsersController do
         expect(user_response[:errors][:email]).to include "is invalid"
       end
 
-      it { should respond_with 422 }
+      it "should respond with 422" do
+        expect(response.status).to be(422)
+      end
     end
   end
 
@@ -99,7 +109,9 @@ describe Api::V1::UsersController do
       delete :destroy, { id: @user.id }, format: :json
     end
 
-    it { should respond_with 204 }
+    it "should respond with 204" do
+      expect(response.status).to be(204)
+    end
 
   end
 end
